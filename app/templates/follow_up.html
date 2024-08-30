@@ -1,0 +1,23 @@
+<!-- follow_up.html -->
+{% extends "base.html" %}
+
+{% block title %}Public Service Online Crime Reporting System{% endblock %}
+
+{% block content %}
+
+<article>
+    <main class="container">
+        <div class="container">
+            <h1>Follow Up on Report</h1>
+        </div>
+        <form method="post" class="styled-form">
+            <label for="tracking_id">Tracking ID:</label>
+            <input type="text" id="tracking_id" name="tracking_id" required>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </main>
+</article>
+{% endblock %}

@@ -1,0 +1,62 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Public Service Online Crime Reporting System{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='css/placeholder_logo.png') }}" alt="Logo">
+            </div>
+            <div class="header-text">
+                <h1>ONLINE CRIME REPORTING SYSTEM</h1>
+                <h2>...report a crime online!</h2>
+            </div>
+        </div>
+        <nav class="horizontal-navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/admin_dashboard">Admin Panel</a></li>
+                <li><a href="/report">Report</a></li>
+                <li><a href="/follow_up">Follow Up</a></li>
+                <li><a href="/about_us">About Us</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="mailto:obiwuruk@gmail.com">Mail Us</a></li>
+                <li><a href="/police_details">Contact Police</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    <nav class="vertical-navbar">
+        <ul>
+            <li><a href="/about">.</a></li>
+            <li><a href="/y_report">Why Report?</a></li>
+            <li><a href="/rt">Report Types</a></li>
+            
+        </ul>
+
+    </nav>
+    <main>
+
+        <div>
+            .......................................
+            ...........................................................................
+        </div>
+        {% block content %}
+        <!-- This block will be overridden by specific content in each page -->
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Public Service. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

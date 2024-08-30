@@ -1,0 +1,35 @@
+<!-- report.html -->
+{% extends "base.html" %}
+
+{% block title %}Public Service Online Crime Reporting System{% endblock %}
+
+{% block content %}
+
+<article>
+        <h1>Report a Crime</h1>
+        <form method="post">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+            <input type="checkbox" id="is_anonymous" name="is_anonymous">
+            <label for="is_anonymous">Report Anonymously</label>
+            <div id="user_details" style="display: none;">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <label for="department">Department:</label>
+                <input type="text" id="department" name="department">
+            </div>
+            <button type="submit" class="btn">Submit Report</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('is_anonymous').addEventListener('change', function() {
+            var userDetails = document.getElementById('user_details');
+            userDetails.style.display = this.checked ? 'none' : 'block';
+        });
+    </script>
+</article>
+{% endblock %}

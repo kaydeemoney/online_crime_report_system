@@ -1,0 +1,26 @@
+<!-- follow_up_results.html -->
+{% extends "base.html" %}
+
+{% block title %}Public Service Online Crime Reporting System{% endblock %}
+
+{% block content %}
+
+<article>
+    <main class="container">
+        <div class="report-details">
+            <h2>Tracking ID: {{ report.tracking_id }}</h2>
+            <p><strong>Title:</strong> {{ report.title }}</p>
+            <p><strong>Description:</strong> {{ report.description }}</p>
+            <p><strong>Status:</strong> {{ report.status }}</p>
+
+            {% if admin1_verdict %}
+                <p><strong>Admin 1 Verdict:</strong> {{ admin1_verdict }}</p>
+            {% endif %}
+
+            {% if admin2_verdict %}
+                <p><strong>Admin 2 Verdict:</strong> {{ admin2_verdict }}</p>
+            {% endif %}
+        </div>
+    </main>
+</article>
+{% endblock %}
